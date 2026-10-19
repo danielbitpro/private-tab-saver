@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Private Tabs Auto-Saver",
+  "version": "1.3",
+  "description": "Automatically saves private window tabs to Markdown files. Keeps latest + previous backup. Includes browser name.",
+  "permissions": [
+    "tabs",
+    "downloads",
+    "alarms",
+    "notifications",
+    "storage"
+  ],
+  "incognito": "spanning",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "Private Tabs Auto-Saver",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "private-tabs-autosave@example.com",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}

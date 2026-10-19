@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Private Tabs Auto-Saver Settings</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 560px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.5;
+      background: #fff;
+      color: #1a1a1a;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #1e1e1e;
+        color: #e8e8e8;
+      }
+      select, button, option {
+        background: #2a2a2a !important;
+        color: #e8e8e8 !important;
+        border: 1px solid #555 !important;
+      }
+      select {
+        background-color: #2a2a2a !important;
+        color: #e8e8e8 !important;
+      }
+      button:hover {
+        background: #3a3a3a !important;
+      }
+      .hint { color: #aaa; }
+      #status { color: #6fcf97; }
+    }
+    h1 { font-size: 1.4rem; }
+    label { display: block; margin-top: 1.4rem; font-weight: 600; }
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .hint { color: #555; font-size: 0.9rem; margin-top: 4px; }
+    button {
+      margin-top: 1.6rem;
+      padding: 8px 16px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button:hover { background: #e4e4e4; }
+    #status { margin-top: 12px; color: #0a0; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Private Tabs Auto-Saver</h1>
+
+  <label for="interval">Save every:</label>
+  <select id="interval">
+    <option value="5">5 minutes</option>
+    <option value="10">10 minutes</option>
+    <option value="15">15 minutes</option>
+    <option value="30">30 minutes</option>
+    <option value="60">1 hour</option>
+  </select>
+
+  <div class="hint">
+    Files are saved in your Downloads folder as:<br>
+    • <code>private-tabs-Waterfox-latest.md</code><br>
+    • <code>private-tabs-Waterfox-previous.md</code><br>
+    (Browser name is detected automatically)
+  </div>
+
+  <button id="save">Save settings</button>
+  <div id="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
